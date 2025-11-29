@@ -84,7 +84,7 @@
             border-radius: 50%; 
             border: 4px solid var(--accent-pink);
             transition: transform 0.2s;
-            cursor: pointer; /* Adicionado cursor de clique */
+            cursor: pointer; 
         }
         .fame-member:hover img {
             transform: scale(1.05);
@@ -176,9 +176,24 @@
         }
 
         /* Estilos de Jogo (Simulador) */
-        .choice-item { display: flex; flex-direction: column; align-items: flex-start; background-color: #fff; padding: 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
+        .choice-item { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            background-color: #fff; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin-bottom: 15px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+        }
         .choice-item span { font-size: 1.1em; font-weight: bold; margin-bottom: 10px; text-align: left; width: 100%; }
-        .choice-options { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; }
+        .choice-options { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: flex-start; 
+            gap: 10px; 
+            width: 100%; /* Garante que o container de opções ocupe a largura total */
+        }
         .choice-options button { 
             background-color: var(--secondary-purple); 
             color: white; 
@@ -188,6 +203,7 @@
             font-size: 0.9em; 
             cursor: pointer; 
             transition: background-color 0.2s, transform 0.1s; 
+            /* Para mobile, permitir que o botão se ajuste ao conteúdo, não quebre forçadamente */
         }
         .randomize-button { background-color: var(--accent-pink); color: white; border: none; padding: 10px 20px; margin: 10px 0 20px 0; border-radius: 50px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s; }
         .randomize-button:hover { background-color: #c0392b; }
@@ -195,7 +211,7 @@
         .phrase-output p { font-size: 1.3em; font-style: italic; color: var(--text-dark); margin: 5px 0 0 0; }
         .phrase-output small { color: var(--accent-pink); font-weight: bold; }
 
-        /* Estilos Finais (Modal) - AJUSTADO PARA ROLAGEM AUTOMÁTICA */
+        /* Estilos Finais (Modal) */
         #memory-display { 
             display: none; 
             background-color: rgba(0, 0, 0, 0.95); 
@@ -212,7 +228,6 @@
             cursor: pointer; 
         }
         
-        /* AJUSTE CHAVE: Centraliza o conteúdo e permite rolagem no modal */
         #memory-content { 
             background-color: var(--text-light); 
             max-width: 95%; 
@@ -228,13 +243,13 @@
             flex-direction: column; 
             justify-content: center; 
             align-items: center;
-            overflow: auto; /* PERMITE ROLAGEM NO MODAL */
+            overflow: auto; 
         }
 
         #memory-image { 
             display: block;
             max-width: 100%; 
-            max-height: 90vh; /* Permite que seja alto, deixando o overflow do pai gerenciar */
+            max-height: 90vh; 
             width: auto; 
             height: auto; 
             border-radius: 10px; 
@@ -253,7 +268,16 @@
             .fame-member img { width: 80px; height: 80px; }
             .charts-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .charts-grid img { height: 100px; }
-            .choice-options { justify-content: center; }
+            
+            /* AJUSTE CHAVE 2: Torna as opções do simulador mais compactas no mobile */
+            .choice-options { 
+                justify-content: center;
+                gap: 5px; /* Reduz o espaço entre os botões */
+            }
+            .choice-options button {
+                font-size: 0.8em; /* Fonte um pouco menor */
+                padding: 6px 10px;
+            }
         }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
     </style>
@@ -363,7 +387,7 @@
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_10.jpg" alt="Foto icônica do grupo 10" title="Aquele Momento" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_11.jpg" alt="Foto icônica do grupo 11" title="Só o Começo" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_12.jpg" alt="Foto icônica do grupo 12" title="Memória de Viagem" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_13.jpg" alt="Foto icônica do grupo 13" title="Noite de Jogos(??)" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_13.jpg" alt="Foto icônica do grupo 13" title="Noite de Jogos(?)" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_14.jpg" alt="Foto icônica do grupo 14" title="Comida e Risadas" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_15.jpg" alt="Foto icônica do grupo 15" title="Em Algum Lugar" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_16.jpg" alt="Foto icônica do grupo 16" title="Deu Certo" onclick="openImageModal(this.src, this.title)"></div>
@@ -394,18 +418,18 @@
                 Esta seção é a prova de que a nossa amizade não é regida por lógica.
             </p>
             <div class="charts-grid">
-                <img src="fotos/grafico1.jpg" alt="Gráfico de estatísticas 1" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico2.jpg" alt="Gráfico de estatísticas 2" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico3.jpg" alt="Gráfico de estatísticas 3"onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico4.jpg" alt="Gráfico de estatísticas 4" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico5.jpg" alt="Gráfico de estatísticas 5" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico6.jpg" alt="Gráfico de estatísticas 6" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico7.jpg" alt="Gráfico de estatísticas 7" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico8.jpg" alt="Gráfico de estatísticas 8" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico9.jpg" alt="Gráfico de estatísticas 9" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico10.jpg" alt="Gráfico de estatísticas 10" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico11.jpg" alt="Gráfico de estatísticas 11" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico12.jpg" alt="Gráfico de estatísticas 12" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico1.jpg" alt="Gráfico de estatísticas 1" title="Tempo gasto em fofocas (em %)" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico2.jpg" alt="Gráfico de estatísticas 2" title="Distribuição do orçamento em hambúrgueres" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico3.jpg" alt="Gráfico de estatísticas 3" title="Probabilidade de a Karol se atrasar" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico4.jpg" alt="Gráfico de estatísticas 4" title="Nível de CAOS atingido por rolê" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico5.jpg" alt="Gráfico de estatísticas 5" title="Perguntas feitas versus respostas obtidas (Fadia)" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico6.jpg" alt="Gráfico de estatísticas 6" title="Variação da qualidade das fotos antes e depois da Amanda" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico7.jpg" alt="Gráfico de estatísticas 7" title="Uso do termo 'GENTE???' ao longo do tempo" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico8.jpg" alt="Gráfico de estatísticas 8" title="Taxa de arrependimento pós-decisão noturna" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico9.jpg" alt="Gráfico de estatísticas 9" title="Horas gastas assistindo séries (Kate)" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico10.jpg" alt="Gráfico de estatísticas 10" title="Número de vezes que o Gabriel teve que explicar algo" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico11.jpg" alt="Gráfico de estatísticas 11" title="Previsão de saudade após a mudança" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico12.jpg" alt="Gráfico de estatísticas 12" title="Pizza de personalidade do grupo" onclick="openImageModal(this.src, this.title)">
             </div>
             <p style="margin-top: 30px;">Análise concluída: A amizade é a variável mais alta. Fim.</p>
         </section>
@@ -477,7 +501,7 @@
             { situation: "Situação 42: Quem compraria uma roupa nova só para usar uma vez e tirar uma foto?", options: [{ name: 'Amanda', result: '70% de chance. O exercício é secundário à documentação.', prob: 0.70 }, { name: 'Bianca', result: '30% de chance. A Bianca iria, mas só se a academia servisse batata frita.', prob: 0.30 }, { name: 'Gabriel', result: '0% de chance. O Gabriel não compra.', prob: 0.00 }, { name: 'Fadia', result: '0% de chance. A Fadia não compra.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não compra.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não compra.', prob: 0.00 }] },
             { situation: "Situação 43: Quem é o mais provável de pedir batata frita no drive-thru de uma cafeteria?", options: [{ name: 'Bianca', result: '100% de chance. A missão é clara, o local é irrelevante.', prob: 1.00 }, { name: 'Gabriel', result: '0% de chance. O Gabriel não pede.', prob: 0.00 }, { name: 'Fadia', result: '0% de chance. A Fadia não pede.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda não pede.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não pede.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não pede.', prob: 0.00 }] },
             { situation: "Situação 44: Quem usaria um código complexo para trancar o próprio celular?", options: [{ name: 'Gabriel', result: '80% de chance. A segurança dos dados é primordial.', prob: 0.80 }, { name: 'Fadia', result: '20% de chance. A Fadia usaria um código complexo, mas esqueceria qual é.', prob: 0.20 }, { name: 'Karol', result: '0% de chance. A Karol não usa.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda não usa.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca não usa.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não usa.', prob: 0.00 }] },
-            { situation: "Situação 45: Quem te mandaria uma mensagem de 10 minutos de áudio sobre um assunto sem importância?", options: [{ name: 'Fadia', result: '60% de chance. O caos exige explicação detalhada.', prob: 0.60 }, { name: 'Kate', result: '40% de chance. Ela só conseguiria resumir se estivesse almoçando.', prob: 0.40 }, { name: 'Gabriel', result: '0% de chance. O Gabriel manda áudio.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda manda áudio.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca manda áudio.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não manda áudio.', prob: 0.00 }] },
+            { situation: "Situação 45: Quem te manda uma mensagem de 10 minutos de áudio sobre um assunto sem importância?", options: [{ name: 'Fadia', result: '60% de chance. O caos exige explicação detalhada.', prob: 0.60 }, { name: 'Kate', result: '40% de chance. Ela só conseguiria resumir se estivesse almoçando.', prob: 0.40 }, { name: 'Gabriel', result: '0% de chance. O Gabriel manda áudio.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda manda áudio.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca manda áudio.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não manda áudio.', prob: 0.00 }] },
             { situation: "Situação 46: Quem é o mais provável de ir para a academia, tirar uma foto e ir embora?", options: [{ name: 'Amanda', result: '75% de chance. O exercício é secundário à documentação.', prob: 0.75 }, { name: 'Bianca', result: '25% de chance. A Bianca iria, mas só se a academia servisse batata frita.', prob: 0.25 }, { name: 'Gabriel', result: '0% de chance. O Gabriel faz exercícios.', prob: 0.00 }, { name: 'Fadia', result: '0% de chance. A Fadia faz exercícios.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol faz exercícios.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate faz exercícios.', prob: 0.00 }] },
             { situation: "Situação 47: Quem esqueceria o próprio aniversário?", options: [{ name: 'Karol', result: '60% de chance. A falta de organização afeta até datas pessoais.', prob: 0.60 }, { name: 'Fadia', result: '40% de chance. A Fadia só lembraria se alguém fizesse uma pergunta existencial sobre o tema.', prob: 0.40 }, { name: 'Gabriel', result: '0% de chance. O Gabriel lembra.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda lembra.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca lembra.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate lembra.', prob: 0.00 }] },
             { situation: "Situação 48: Quem faz um grupo separado para planejar um presente para a pessoa que está no grupo original?", options: [{ name: 'Gabriel', result: '60% de chance. Ele gosta da eficiência em subsistemas.', prob: 0.60 }, { name: 'Amanda', result: '40% de chance. Ela precisa de um grupo para discutir o filtro ideal para a foto do presente.', prob: 0.40 }, { name: 'Fadia', result: '0% de chance. A Fadia não faz.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não faz.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca não faz.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não faz.', prob: 0.00 }] },
@@ -692,10 +716,11 @@
             openImageModal(randomPhoto.url, "QUE MEMÓRIA É ESSA?");
         }
         
-        // --- Funções de Navegação da Galeria ---
+        // --- Funções de Navegação da Galeria (AJUSTE CHAVE 1) ---
         function scrollGallery(direction) {
             const container = document.getElementById('gallery-container');
-            const scrollDistance = (200 * 3) + (15 * 2); 
+            // NOVO CÁLCULO: Rola pela largura visível do container, garantindo que não pule demais no mobile
+            const scrollDistance = container.clientWidth * 0.9; // Rola 90% da largura visível
             container.scrollLeft += direction * scrollDistance;
         }
 
