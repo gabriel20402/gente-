@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gente³???? (❓👉❌)</title>
+    <title>Gente³???? (❓👉❌) 💜 O Site da Gangue Original</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers:wght@400&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -84,7 +84,7 @@
             border-radius: 50%; 
             border: 4px solid var(--accent-pink);
             transition: transform 0.2s;
-            cursor: pointer; 
+            cursor: pointer; /* Adicionado cursor de clique */
         }
         .fame-member:hover img {
             transform: scale(1.05);
@@ -94,6 +94,96 @@
         .fame-member p { font-size: 0.9em; margin: 0; color: var(--secondary-purple); }
         .fame-member .emojis { font-size: 1.3em; margin-top: 5px; }
 
+
+        /* --- ESTILOS DO HALL DE TROFÉUS (AJUSTADO PARA SER MENOR) --- */
+        .trofeu-container {
+            padding: 30px 0 30px 0; /* Reduzido o padding */
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            border: 3px solid #d4af37; /* Borda dourada para diferenciar */
+            max-width: 900px; /* Limita a largura para ficar mais anexo */
+            margin: 40px auto; /* Centraliza o container */
+        }
+
+        .trofeu-container h2 {
+            text-align: center;
+            color: #a67c00; 
+            margin-bottom: 25px;
+            font-size: 2em; /* Reduzido o tamanho da fonte do título */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-family: 'Bangers', cursive; 
+        }
+
+        /* CONFIGURAÇÃO DA ROLAGEM ÚNICA E MANUAL (COM BARRA VISÍVEL) */
+        .trofeu-marquee-wrapper {
+            width: 100%;
+            overflow-x: auto; /* Mantém a rolagem ativada */
+            white-space: nowrap; 
+            padding: 10px 0; 
+            -webkit-overflow-scrolling: touch; 
+            /* Para o Firefox */
+            scrollbar-color: #a67c00 #ffe787; 
+            scrollbar-width: thin;
+        }
+        /* Estilos WebKit para barra de rolagem visível (Chrome, Safari, Edge) */
+        .trofeu-marquee-wrapper::-webkit-scrollbar { 
+            display: block; 
+            height: 8px; /* Altura da barra horizontal */
+        }
+        .trofeu-marquee-wrapper::-webkit-scrollbar-thumb {
+            background-color: #a67c00; /* Cor do "pegador" */
+            border-radius: 4px;
+        }
+        .trofeu-marquee-wrapper::-webkit-scrollbar-track {
+            background: #ffe787; /* Cor do fundo da barra */
+        }
+
+        .trofeu-card-list {
+            display: flex; 
+            transition: none; 
+            justify-content: flex-start;
+        }
+        
+        /* Estilos dos Cards - CHAVE PARA REDUÇÃO DE TAMANHO */
+        .trofeu-card {
+            min-width: 250px; /* Reduz a largura mínima do card */
+            min-height: 280px; /* Reduz a altura mínima */
+            margin: 0 10px; /* Reduz a margem entre os cards */
+            background: linear-gradient(145deg, #fffbe0, #ffe787);
+            border: 3px solid #a67c00; /* Reduz a espessura da borda */
+            border-radius: 15px; /* Reduz o raio da borda */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            padding: 15px; /* Reduz o padding interno */
+            text-align: center;
+            vertical-align: top; 
+            transition: transform 0.3s;
+            white-space: normal; 
+            box-sizing: border-box; 
+            flex-shrink: 0; 
+        }
+        
+        .trofeu-card:hover { transform: scale(1.03); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+
+        /* Ícones e Detalhes - AJUSTADOS PARA CABER NO CARD MENOR */
+        .trofeu-card-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 8px; position: relative; }
+        .trofeu-card-icon { font-size: 4em; color: #d4af37; /* Reduz o tamanho do ícone */ }
+        .simbolo-autismo { position: absolute; top: 0; right: 2px; font-size: 1em; background-color: #ff5733; color: white; padding: 1px 3px; border-radius: 3px; line-height: 1; }
+        .trofeu-card h3 { 
+            color: #664f00; 
+            border-bottom: 2px solid #d4af37; /* Borda mais fina */
+            padding-bottom: 5px; 
+            font-size: 1.3em; /* Reduz o tamanho do nome */
+            width: 100%; 
+            font-family: 'Open Sans', sans-serif; 
+        }
+        .trofeu-list { list-style: none; padding: 0; text-align: left; margin-top: 10px; }
+        .trofeu-list li { font-size: 0.9em; margin-bottom: 8px; padding-left: 20px; position: relative; line-height: 1.2; font-weight: bold; overflow-wrap: break-word; }
+        .trofeu-list li::before { content: '🌟'; position: absolute; left: 0; top: 0; font-size: 0.9em; color: #ffd700; }
+        /* --- FIM DOS ESTILOS DO HALL DE TROFÉUS --- */
 
         /* ESTILO PARA GALERIA (CARROSSEL) */
         .gallery-wrapper {
@@ -176,24 +266,9 @@
         }
 
         /* Estilos de Jogo (Simulador) */
-        .choice-item { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: flex-start; 
-            background-color: #fff; 
-            padding: 15px; 
-            border-radius: 10px; 
-            margin-bottom: 15px; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
-        }
+        .choice-item { display: flex; flex-direction: column; align-items: flex-start; background-color: #fff; padding: 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
         .choice-item span { font-size: 1.1em; font-weight: bold; margin-bottom: 10px; text-align: left; width: 100%; }
-        .choice-options { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: flex-start; 
-            gap: 10px; 
-            width: 100%; /* Garante que o container de opções ocupe a largura total */
-        }
+        .choice-options { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; }
         .choice-options button { 
             background-color: var(--secondary-purple); 
             color: white; 
@@ -203,7 +278,6 @@
             font-size: 0.9em; 
             cursor: pointer; 
             transition: background-color 0.2s, transform 0.1s; 
-            /* Para mobile, permitir que o botão se ajuste ao conteúdo, não quebre forçadamente */
         }
         .randomize-button { background-color: var(--accent-pink); color: white; border: none; padding: 10px 20px; margin: 10px 0 20px 0; border-radius: 50px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s; }
         .randomize-button:hover { background-color: #c0392b; }
@@ -211,7 +285,7 @@
         .phrase-output p { font-size: 1.3em; font-style: italic; color: var(--text-dark); margin: 5px 0 0 0; }
         .phrase-output small { color: var(--accent-pink); font-weight: bold; }
 
-        /* Estilos Finais (Modal) */
+        /* Estilos Finais (Modal) - AJUSTADO PARA ROLAGEM AUTOMÁTICA */
         #memory-display { 
             display: none; 
             background-color: rgba(0, 0, 0, 0.95); 
@@ -228,6 +302,7 @@
             cursor: pointer; 
         }
         
+        /* AJUSTE CHAVE: Centraliza o conteúdo e permite rolagem no modal */
         #memory-content { 
             background-color: var(--text-light); 
             max-width: 95%; 
@@ -243,13 +318,13 @@
             flex-direction: column; 
             justify-content: center; 
             align-items: center;
-            overflow: auto; 
+            overflow: auto; /* PERMITE ROLAGEM NO MODAL */
         }
 
         #memory-image { 
             display: block;
             max-width: 100%; 
-            max-height: 90vh; 
+            max-height: 90vh; /* Permite que seja alto, deixando o overflow do pai gerenciar */
             width: auto; 
             height: auto; 
             border-radius: 10px; 
@@ -268,16 +343,12 @@
             .fame-member img { width: 80px; height: 80px; }
             .charts-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .charts-grid img { height: 100px; }
-            
-            /* AJUSTE CHAVE 2: Torna as opções do simulador mais compactas no mobile */
-            .choice-options { 
-                justify-content: center;
-                gap: 5px; /* Reduz o espaço entre os botões */
-            }
-            .choice-options button {
-                font-size: 0.8em; /* Fonte um pouco menor */
-                padding: 6px 10px;
-            }
+            .choice-options { justify-content: center; }
+            /* Ajuste responsivo para o card de troféus */
+            .trofeu-card { min-width: 200px; min-height: 250px; margin: 0 8px; padding: 10px; }
+            .trofeu-card-icon { font-size: 3em; }
+            .trofeu-list li { font-size: 0.8em; }
+            .trofeu-container h2 { font-size: 1.5em; }
         }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
     </style>
@@ -328,6 +399,90 @@
         </section>
         
         
+        <div class="trofeu-container">
+            <h2>🏆 Hall de Troféus do Grupo 🏆</h2>
+            
+            <div class="trofeu-marquee-wrapper" id="scroll-container">
+                
+                <div class="trofeu-card-list">
+                    
+                    <div class="trofeu-card">
+                        <div class="trofeu-card-header">
+                            <div class="trofeu-card-icon">🦉</div>
+                            <span class="simbolo-autismo" title="Símbolo de Autismo">🧩</span>
+                            <h3>Gabriel</h3>
+                        </div>
+                        <ul class="trofeu-list">
+                            <li>A Voz da Razão</li>
+                            <li>Doutorado em Paciência</li>
+                            <li>Prêmio de Sinceridade Rápida</li>
+                        </ul>
+                    </div>
+
+                    <div class="trofeu-card">
+                        <div class="trofeu-card-header">
+                            <div class="trofeu-card-icon">🔎</div>
+                            <span class="simbolo-autismo" title="Símbolo de Autismo">🧩</span>
+                            <h3>Fadia</h3>
+                        </div>
+                        <ul class="trofeu-list">
+                            <li>Troféu Oráculo da Fofoca Secundária</li>
+                            <li>Troféu Aventureiro Culinário (em Nível 1)</li>
+                            <li>Prêmio Agente Secreto</li>
+                        </ul>
+                    </div>
+
+                    <div class="trofeu-card">
+                        <div class="trofeu-card-header">
+                            <div class="trofeu-card-icon">👑</div>
+                            <h3>Bianca</h3>
+                        </div>
+                        <ul class="trofeu-list">
+                            <li>Troféu Oráculo da Fofoca</li>
+                            <li>Troféu Mãe do Grupo</li>
+                            <li>Prêmio Fada Sensata da Saúde</li>
+                        </ul>
+                    </div>
+
+                    <div class="trofeu-card">
+                        <div class="trofeu-card-header">
+                            <div class="trofeu-card-icon">⚡</div>
+                            <h3>Kate</h3>
+                        </div>
+                        <ul class="trofeu-list">
+                            <li>Prêmio Atraso Crônico</li>
+                            <li>Troféu Vibe Positiva</li>
+                            <li>Prêmio "Achei no Pinterest"</li>
+                        </ul>
+                    </div>
+
+                    <div class="trofeu-card">
+                        <div class="trofeu-card-header">
+                            <div class="trofeu-card-icon">🛡️</div>
+                            <h3>Karol</h3>
+                        </div>
+                        <ul class="trofeu-list">
+                            <li>Prêmio Amiga Sincericídio</li>
+                            <li>Prêmio Defensora da Justiça</li>
+                            <li>Prêmio Vibe do Aconchego</li>
+                        </ul>
+                    </div>
+
+                    <div class="trofeu-card">
+                        <div class="trofeu-card-header">
+                            <div class="trofeu-card-icon">🎤</div>
+                            <h3>Amanda</h3>
+                        </div>
+                        <ul class="trofeu-list">
+                            <li>Medalha de Expressão Facial Épica</li>
+                            <li>Medalha de Cantora no Carro</li>
+                            <li>Prêmio "A Voz da Disney Não Oficial"</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
         <section class="section-card">
             <h2>Simulador de Escolhas Ruins</h2>
             <p>
@@ -356,7 +511,7 @@
         <section class="section-card">
             <h2>Dose de Suporte</h2>
             <p>
-                Escolha uma categoria e receba uma frase aleatória para dar um up no seu dia, com a ciência ou o caos de fundo.
+                Escolha uma categoria e receba uma frase aleatória para dar um *up* no seu dia, com a ciência ou o caos de fundo.
             </p>
             <div class="choice-options">
                 <button onclick="displayRandomPhrase('humor')">Caos & Risadas</button>
@@ -377,35 +532,35 @@
                 <div id="gallery-container" class="horizontal-gallery-container">
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_01.jpg" alt="Foto icônica do grupo 1" title="Momentos que Ficaram na História (e nas Fotos)" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_02.jpg" alt="Foto icônica do grupo 2" title="A Vergonha Alheia é Nossa" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_03.jpg" alt="Foto icônica do grupo 3" title="Bagunça" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_04.jpg" alt="Foto icônica do grupo 4" title="Registro de Provas" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_05.jpg" alt="Foto icônica do grupo 5" title="Confissões Fotográficas" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_03.jpg" alt="Foto icônica do grupo 3" title="Lendas Vivas da Bagunça" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_04.jpg" alt="Foto icônica do grupo 4" title="Registro de Provas (do Amor)" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_05.jpg" alt="Foto icônica do grupo 5" title="Confissões Fotográficas da Gangue" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_06.jpg" alt="Foto icônica do grupo 6" title="Uma Noite Que Não Esqueceremos" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_07.jpg" alt="Foto icônica do grupo 7" title="Inesperado" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_07.jpg" alt="Foto icônica do grupo 7" title="Selfie Inesperada" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_08.jpg" alt="Foto icônica do grupo 8" title="Rolê Clássico" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_09.jpg" alt="Foto icônica do grupo 9" title="Reunião Estratégica" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_10.jpg" alt="Foto icônica do grupo 10" title="Aquele Momento" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_11.jpg" alt="Foto icônica do grupo 11" title="Só o Começo" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_12.jpg" alt="Foto icônica do grupo 12" title="Memória de Viagem" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_13.jpg" alt="Foto icônica do grupo 13" title="Noite de Jogos(?)" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_13.jpg" alt="Foto icônica do grupo 13" title="Noite de Jogos" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_14.jpg" alt="Foto icônica do grupo 14" title="Comida e Risadas" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_15.jpg" alt="Foto icônica do grupo 15" title="Em Algum Lugar" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_16.jpg" alt="Foto icônica do grupo 16" title="Deu Certo" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_17.jpg" alt="Foto icônica do grupo 17" title="Decisão Errada" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_18.jpg" alt="Foto icônica do grupo 18" title="Comemorando" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_19.jpg" alt="Foto icônica do grupo 19" title="Festa e Caos" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_20.jpg" alt="Foto icônica do grupo 20" title="Registro de ontem" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_20.jpg" alt="Foto icônica do grupo 20" title="Registro de Amizade" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_21.jpg" alt="Foto icônica do grupo 21" title="A Mais Nova" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_22.jpg" alt="Foto icônica do grupo 22" title="Dia Normal" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_23.jpg" alt="Foto icônica do grupo 23" title="Risada Garantida" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_24.jpg" alt="Foto icônica do grupo 24" title="Olha o Passarinho" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_25.jpg" alt="Foto icônica do grupo 25" title="Noite Inesquecível" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_26.jpg" alt="Foto icônica do grupo 26" title="A Viagem" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_27.jpg" alt="Foto icônica do grupo 27" title="Registro" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_27.jpg" alt="Foto icônica do grupo 27" title="Registro de Lendas" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_28.jpg" alt="Foto icônica do grupo 28" title="Micos e Mais Micos" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_29.jpg" alt="Foto icônica do grupo 29" title="BFFFF" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_29.jpg" alt="Foto icônica do grupo 29" title="Melhores Amigos" onclick="openImageModal(this.src, this.title)"></div>
                     <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_30.jpg" alt="Foto icônica do grupo 30" title="Quase Deu Ruim" onclick="openImageModal(this.src, this.title)"></div>
-                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_31.jpg" alt="Foto icônica do grupo 31" title="The pick" onclick="openImageModal(this.src, this.title)"></div>
+                    <div class="horizontal-gallery-item"><img src="fotos/foto_grupo_31.jpg" alt="Foto icônica do grupo 31" title="A Última" onclick="openImageModal(this.src, this.title)"></div>
                 </div>
 
                 <button class="gallery-nav-button right" onclick="scrollGallery(1)">&gt;</button>
@@ -415,21 +570,21 @@
         <section class="section-card">
             <h2>Nossas Estatísticas (Onde a Ciência Falha)</h2>
             <p>
-                Esta seção é a prova de que a nossa amizade não é regida por lógica.
+                Esta seção é a prova de que a nossa amizade não é regida por lógica, mas por um amor incondicional.
             </p>
             <div class="charts-grid">
-                <img src="fotos/grafico1.jpg" alt="Gráfico de estatísticas 1" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico2.jpg" alt="Gráfico de estatísticas 2" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico3.jpg" alt="Gráfico de estatísticas 3"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico4.jpg" alt="Gráfico de estatísticas 4"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico5.jpg" alt="Gráfico de estatísticas 5"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico6.jpg" alt="Gráfico de estatísticas 6" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico7.jpg" alt="Gráfico de estatísticas 7"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico8.jpg" alt="Gráfico de estatísticas 8" onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico9.jpg" alt="Gráfico de estatísticas 9"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico10.jpg" alt="Gráfico de estatísticas 10"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico11.jpg" alt="Gráfico de estatísticas 11"  onclick="openImageModal(this.src, this.title)">
-                <img src="fotos/grafico12.jpg" alt="Gráfico de estatísticas 12"  onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico1.jpg" alt="Gráfico de estatísticas 1" title="Tempo gasto em fofocas (em %)" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico2.jpg" alt="Gráfico de estatísticas 2" title="Distribuição do orçamento em hambúrgueres" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico3.jpg" alt="Gráfico de estatísticas 3" title="Probabilidade de a Karol se atrasar" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico4.jpg" alt="Gráfico de estatísticas 4" title="Nível de CAOS atingido por rolê" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico5.jpg" alt="Gráfico de estatísticas 5" title="Perguntas feitas versus respostas obtidas (Fadia)" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico6.jpg" alt="Gráfico de estatísticas 6" title="Variação da qualidade das fotos antes e depois da Amanda" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico7.jpg" alt="Gráfico de estatísticas 7" title="Uso do termo 'GENTE???' ao longo do tempo" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico8.jpg" alt="Gráfico de estatísticas 8" title="Taxa de arrependimento pós-decisão noturna" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico9.jpg" alt="Gráfico de estatísticas 9" title="Horas gastas assistindo séries (Kate)" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico10.jpg" alt="Gráfico de estatísticas 10" title="Número de vezes que o Gabriel teve que explicar algo" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico11.jpg" alt="Gráfico de estatísticas 11" title="Previsão de saudade após a mudança" onclick="openImageModal(this.src, this.title)">
+                <img src="fotos/grafico12.jpg" alt="Gráfico de estatísticas 12" title="Pizza de personalidade do grupo" onclick="openImageModal(this.src, this.title)">
             </div>
             <p style="margin-top: 30px;">Análise concluída: A amizade é a variável mais alta. Fim.</p>
         </section>
@@ -501,7 +656,7 @@
             { situation: "Situação 42: Quem compraria uma roupa nova só para usar uma vez e tirar uma foto?", options: [{ name: 'Amanda', result: '70% de chance. O exercício é secundário à documentação.', prob: 0.70 }, { name: 'Bianca', result: '30% de chance. A Bianca iria, mas só se a academia servisse batata frita.', prob: 0.30 }, { name: 'Gabriel', result: '0% de chance. O Gabriel não compra.', prob: 0.00 }, { name: 'Fadia', result: '0% de chance. A Fadia não compra.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não compra.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não compra.', prob: 0.00 }] },
             { situation: "Situação 43: Quem é o mais provável de pedir batata frita no drive-thru de uma cafeteria?", options: [{ name: 'Bianca', result: '100% de chance. A missão é clara, o local é irrelevante.', prob: 1.00 }, { name: 'Gabriel', result: '0% de chance. O Gabriel não pede.', prob: 0.00 }, { name: 'Fadia', result: '0% de chance. A Fadia não pede.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda não pede.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não pede.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não pede.', prob: 0.00 }] },
             { situation: "Situação 44: Quem usaria um código complexo para trancar o próprio celular?", options: [{ name: 'Gabriel', result: '80% de chance. A segurança dos dados é primordial.', prob: 0.80 }, { name: 'Fadia', result: '20% de chance. A Fadia usaria um código complexo, mas esqueceria qual é.', prob: 0.20 }, { name: 'Karol', result: '0% de chance. A Karol não usa.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda não usa.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca não usa.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não usa.', prob: 0.00 }] },
-            { situation: "Situação 45: Quem te manda uma mensagem de 10 minutos de áudio sobre um assunto sem importância?", options: [{ name: 'Fadia', result: '60% de chance. O caos exige explicação detalhada.', prob: 0.60 }, { name: 'Kate', result: '40% de chance. Ela só conseguiria resumir se estivesse almoçando.', prob: 0.40 }, { name: 'Gabriel', result: '0% de chance. O Gabriel manda áudio.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda manda áudio.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca manda áudio.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não manda áudio.', prob: 0.00 }] },
+            { situation: "Situação 45: Quem te mandaria uma mensagem de 10 minutos de áudio sobre um assunto sem importância?", options: [{ name: 'Fadia', result: '60% de chance. O caos exige explicação detalhada.', prob: 0.60 }, { name: 'Kate', result: '40% de chance. Ela só conseguiria resumir se estivesse almoçando.', prob: 0.40 }, { name: 'Gabriel', result: '0% de chance. O Gabriel manda áudio.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda manda áudio.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca manda áudio.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não manda áudio.', prob: 0.00 }] },
             { situation: "Situação 46: Quem é o mais provável de ir para a academia, tirar uma foto e ir embora?", options: [{ name: 'Amanda', result: '75% de chance. O exercício é secundário à documentação.', prob: 0.75 }, { name: 'Bianca', result: '25% de chance. A Bianca iria, mas só se a academia servisse batata frita.', prob: 0.25 }, { name: 'Gabriel', result: '0% de chance. O Gabriel faz exercícios.', prob: 0.00 }, { name: 'Fadia', result: '0% de chance. A Fadia faz exercícios.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol faz exercícios.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate faz exercícios.', prob: 0.00 }] },
             { situation: "Situação 47: Quem esqueceria o próprio aniversário?", options: [{ name: 'Karol', result: '60% de chance. A falta de organização afeta até datas pessoais.', prob: 0.60 }, { name: 'Fadia', result: '40% de chance. A Fadia só lembraria se alguém fizesse uma pergunta existencial sobre o tema.', prob: 0.40 }, { name: 'Gabriel', result: '0% de chance. O Gabriel lembra.', prob: 0.00 }, { name: 'Amanda', result: '0% de chance. A Amanda lembra.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca lembra.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate lembra.', prob: 0.00 }] },
             { situation: "Situação 48: Quem faz um grupo separado para planejar um presente para a pessoa que está no grupo original?", options: [{ name: 'Gabriel', result: '60% de chance. Ele gosta da eficiência em subsistemas.', prob: 0.60 }, { name: 'Amanda', result: '40% de chance. Ela precisa de um grupo para discutir o filtro ideal para a foto do presente.', prob: 0.40 }, { name: 'Fadia', result: '0% de chance. A Fadia não faz.', prob: 0.00 }, { name: 'Karol', result: '0% de chance. A Karol não faz.', prob: 0.00 }, { name: 'Bianca', result: '0% de chance. A Bianca não faz.', prob: 0.00 }, { name: 'Kate', result: '0% de chance. A Kate não faz.', prob: 0.00 }] },
@@ -686,8 +841,8 @@
 
             outputDiv.style.opacity = 0;
             setTimeout(() => {
-                    outputDiv.innerHTML = `<p>"${selectedPhrase.text}"</p><small>— ${authorText}</small>`;
-                    outputDiv.style.opacity = 1;
+                        outputDiv.innerHTML = `<p>"${selectedPhrase.text}"</p><small>— ${authorText}</small>`;
+                        outputDiv.style.opacity = 1;
             }, 300);
         }
 
@@ -716,11 +871,10 @@
             openImageModal(randomPhoto.url, "QUE MEMÓRIA É ESSA?");
         }
         
-        // --- Funções de Navegação da Galeria (AJUSTE CHAVE 1) ---
+        // --- Funções de Navegação da Galeria ---
         function scrollGallery(direction) {
             const container = document.getElementById('gallery-container');
-            // NOVO CÁLCULO: Rola pela largura visível do container, garantindo que não pule demais no mobile
-            const scrollDistance = container.clientWidth * 0.9; // Rola 90% da largura visível
+            const scrollDistance = (200 * 3) + (15 * 2); 
             container.scrollLeft += direction * scrollDistance;
         }
 
@@ -731,7 +885,91 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') document.getElementById('memory-display').style.display='none';
         });
+
+        /* --- JS DE ROLAGEM AUTOMÁTICA DOS TROFÉUS (INTEGRADO) --- */
+        const scrollContainer = document.getElementById('scroll-container');
+        let animationFrameId; // ID para requestAnimationFrame
+        let isUserScrolling = false;
+        let lastTimestamp = 0;
+        
+        // Ajustado para uma rolagem muito lenta e suave
+        const SCROLL_SPEED_PX_PER_MS = 0.05; // 0.05 pixels por milissegundo
+
+        // Função principal que move o carrossel lentamente
+        function autoScroll(timestamp) {
+            if (!scrollContainer) return; // Segurança caso o elemento não exista
+            if (isUserScrolling) return;
+
+            if (lastTimestamp === 0) lastTimestamp = timestamp;
+            const deltaTime = timestamp - lastTimestamp; // Tempo passado desde o último quadro
+
+            // Calcula o quanto rolar com base no tempo (para suavidade)
+            const scrollAmount = deltaTime * SCROLL_SPEED_PX_PER_MS;
+            
+            // Checa se o carrossel já chegou ao final
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 1) {
+                // Chegou ao final (com 1px de tolerância), para o scroll
+                stopAutoScroll();
+                return;
+            }
+
+            // Move o carrossel lentamente
+            scrollContainer.scrollLeft += scrollAmount;
+            
+            // Atualiza o timestamp para o próximo ciclo
+            lastTimestamp = timestamp;
+
+            // Continua o loop de movimento
+            animationFrameId = requestAnimationFrame(autoScroll);
+        }
+
+        function stopAutoScroll() {
+            cancelAnimationFrame(animationFrameId);
+        }
+
+        // --- Lógica de Interação do Usuário ---
+
+        if (scrollContainer) {
+            // 1. Início do Arrastar (Mouse Down/Touch Start) - Para imediatamente
+            scrollContainer.addEventListener('mousedown', () => { isUserScrolling = true; stopAutoScroll(); });
+            scrollContainer.addEventListener('touchstart', () => { isUserScrolling = true; stopAutoScroll(); });
+            
+            // 2. Evento de Rolagem Manual (Mouse Scroll, Touch Move)
+            scrollContainer.addEventListener('scroll', handleUserScroll);
+
+            let scrollTimeout;
+            
+            function handleUserScroll() {
+                isUserScrolling = true;
+                stopAutoScroll();
+
+                // Limpa o timeout para reiniciar o contador de "parada"
+                clearTimeout(scrollTimeout);
+                
+                // Define um novo timeout para checar se o usuário parou de interagir (mouse up ou toque final)
+                scrollTimeout = setTimeout(() => {
+                    isUserScrolling = false;
+                    
+                    // Se a posição for a inicial, reinicia o scroll após um pequeno delay
+                    if (scrollContainer.scrollLeft <= 5) { // Quase no início (5px de tolerância)
+                        lastTimestamp = 0; // Reseta o timer para começar suavemente
+                        autoScroll(); 
+                    }
+                }, 500); // 500ms (meio segundo) após o último movimento, verifica se deve reiniciar.
+            }
+            
+            // 3. Fim do Arrastar (Mouse Up/Touch End) - Chama a função de verificação
+            scrollContainer.addEventListener('mouseup', handleUserScroll);
+            scrollContainer.addEventListener('touchend', handleUserScroll);
+
+            // INICIALIZAÇÃO: Começa a passar automaticamente quando a página carrega
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    autoScroll();
+                }, 100); 
+            });
+        }
+        /* --- FIM DO JS DE ROLAGEM AUTOMÁTICA DOS TROFÉUS --- */
     </script>
 </body>
-
 </html>
